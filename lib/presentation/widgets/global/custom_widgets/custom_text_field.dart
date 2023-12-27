@@ -12,12 +12,14 @@ class CustomTextField extends StatefulWidget {
   final bool? isThatEmail;
   final ValueNotifier<bool>? validate;
   final bool isThatLogin;
+  final bool obscureText;
   const CustomTextField(
       {required this.controller,
       required this.hint,
       required this.isThatLogin,
       this.isThatEmail,
       this.validate,
+      required this.obscureText,
       Key? key})
       : super(key: key);
 
@@ -77,6 +79,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
               cursorColor: ColorManager.teal,
               style: getNormalStyle(
                   color: Theme.of(context).focusColor, fontSize: 15),
+              obscureText: widget.obscureText,
               decoration: InputDecoration(
                 hintText: widget.hint,
                 hintStyle: isThatMobile
