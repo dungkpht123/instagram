@@ -117,6 +117,7 @@ class _SignUpPageState extends State<RegisterWidgets> {
               hint: StringsManager.fullName.tr,
               controller: widget.fullNameController!,
               isThatLogin: widget.isThatLogIn,
+              obscureText: false,
             ),
             SizedBox(height: isThatMobile ? 15 : 6.5),
           ],
@@ -126,6 +127,7 @@ class _SignUpPageState extends State<RegisterWidgets> {
             isThatEmail: false,
             validate: widget.validatePassword,
             isThatLogin: widget.isThatLogIn,
+            obscureText: true,
           ),
           if (!widget.isThatLogIn) ...[
             if (!isThatMobile) const SizedBox(height: 10),
